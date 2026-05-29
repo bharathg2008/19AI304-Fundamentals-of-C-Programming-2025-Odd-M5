@@ -39,7 +39,40 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include<stdio.h>
+void swapv(int x, int y){
+    int temp = x;
+    x = y;
+    y = temp;
+    printf("Inside swapv: a = %d, b = %d\n", x, y);
+}
+
+void swapr(int *x, int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+    printf("Inside swapr: a = %d, b = %d\n", *x, *y);
+}
+
+int main(){
+    int a = 10, b = 20;
+
+    printf("Before swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After swapv: a = %d, b = %d\n", a, b);
+
+    printf("Before swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+```
 # Output:
+<img width="381" height="194" alt="598845369-104186e7-9a57-47bd-99bc-b64d0b43ebce" src="https://github.com/user-attachments/assets/38c48697-44ed-41da-a726-6427bdaacb1b" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +110,32 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+int fibo(int x){
+    if(x == 0 || x == 1)
+        return x;
+    else
+        return fibo(x - 1) + fibo(x - 2);
+}
+
+int main(){
+    int n, i;
+    scanf("%d", &n);
+
+    printf("Fibonacci series of %d terms:\n", n);
+    for(i = 0; i < n; i++){
+        printf("%d ", fibo(i));
+    }
+    printf("\n");
+
+    return 0;
+}
+```
 # Output:
+<img width="341" height="108" alt="598845922-7c5555fc-666b-47fc-8e96-6d811992106c" src="https://github.com/user-attachments/assets/310faf5d-2ead-4977-85b5-7f6acae27f49" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +177,34 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+void printEvenOdd(int cur, int limit){
+    if(cur > limit)
+        return;
+    if(cur == limit)
+        printf("%d", cur);
+    else
+        printf("%d, ", cur);
+    printEvenOdd(cur + 2, limit);
+}
+
+int main(){
+    int lowerLimit, upperLimit;
+    scanf("%d", &lowerLimit);
+    scanf("%d", &upperLimit);
+
+    printf("Numbers in the given range:\n");
+    printEvenOdd(lowerLimit, upperLimit);
+    printf("\n");
+
+    return 0;
+}
+```
 # Output:
+<img width="453" height="145" alt="598846162-b73d5920-56ba-4d8e-bc95-44a74a38ff1e" src="https://github.com/user-attachments/assets/29bb8455-c1ff-4bb9-b035-cf0c8c52fbdc" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +246,38 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int *ptr, n, i, sum = 0;
+
+    scanf("%d", &n);
+
+    ptr = (int*) calloc(n, sizeof(int));
+    if(ptr == NULL){
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    for(i = 0; i < n; i++){
+        scanf("%d", ptr + i);
+    }
+
+    for(i = 0; i < n; i++){
+        sum += *(ptr + i);
+    }
+
+    printf("Sum = %d\n", sum);
+
+    free(ptr);
+    return 0;
+}
+```
 # Output:
+<img width="685" height="602" alt="598846435-de943585-1886-4a37-b2cc-a5b957e27cf6" src="https://github.com/user-attachments/assets/cc039909-3bcd-4145-9955-3461ac1aa09f" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +313,33 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include<stdio.h>
+
+void displayArray(int *arr, int size){
+    for(int i = 0; i < size; i++){
+        printf("%d ", *(arr + i));
+    }
+    printf("\n");
+}
+
+int main(){
+    int arr[5], i;
+
+    for(i = 0; i < 5; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Array elements:\n");
+    displayArray(arr, 5);
+
+    return 0;
+}
+
+```
+# output:
+<img width="242" height="97" alt="598846705-1e81c530-5b52-4619-9f1c-e656a1df4c68" src="https://github.com/user-attachments/assets/62bdc8bf-f9e8-4485-8e3a-6f7153574ac4" />
+
 # Output:
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
